@@ -1,0 +1,47 @@
+html {
+  background: url("./assets/large_3_blur.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.side-nav {
+  background-color:#375160;
+}
+
+.side-nav li a {
+  color:#BE2A28;
+  text-shadow: .1em .1em #000;
+}
+
+.side-nav .background img {
+  height:100%;
+  width:100%;
+}
+.userView {
+  width:100%;
+  height:200px;
+}
+.subheader {
+  padding-left:1.5em;
+}
+
+.card {
+  width:40%;
+  margin:auto;
+  background-color:#375160;
+  display:flex;
+  flex-direction:column;
+}
+.card-action {
+  margin:auto;
+}
+
+
+/*
+PHISH DONUT COLORS
+teal - 375160
+Red - BE2A28
+P*/
