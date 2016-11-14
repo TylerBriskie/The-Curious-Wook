@@ -18,6 +18,16 @@ function displaySongAInfo(song){
   details.timesPlayed = song.data.tracks_count;
   details.debut = song.data.tracks[0].show_date;
   details.mostRecent = song.data.tracks[tracks.length-1].show_date;
+  // MATH FOR LONGEST GAP BELOW
+  // for (var i = 1; i < tracks.length; i++) {
+  //   var showGap = 0;
+  //   if ((song.data.tracks[i].show_date - song.data.tracks[i-1].show_date)>showGap){
+  //     showGap = song.data.tracks[i].show_date - song.data.tracks[i-1].show_date;
+  //   };
+  //   details.longestGap = showGap;
+  // };
+
+  $('.song-a-details').html('');
   $('.song-a-details').append('<h5>Times Played</h5>');
   $('.song-a-details').append('<p>' + details.timesPlayed + '</p>');
   $('.song-a-details').append('<h5>First Played</h5>');
@@ -25,12 +35,14 @@ function displaySongAInfo(song){
   $('.song-a-details').append('<h5>Most Recently Played</h5>');
   $('.song-a-details').append('<p>' + details.mostRecent + '</p>');
 };
+
 function displaySongBInfo(song){
   var details = {};
   var tracks = song.data.tracks
   details.timesPlayed = song.data.tracks_count;
   details.debut = song.data.tracks[0].show_date;
   details.mostRecent = song.data.tracks[tracks.length-1].show_date;
+  $('.song-b-details').html('');
   $('.song-b-details').append('<h5>Times Played</h5>');
   $('.song-b-details').append('<p>' + details.timesPlayed + '</p>');
   $('.song-b-details').append('<h5>First Played</h5>');
