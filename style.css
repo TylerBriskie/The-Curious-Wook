@@ -4,7 +4,13 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
+@media (max-width: 415px) {
+  html {
+    background-image: url("./assets/large_3_blur_mobile.jpg");
+  }
 }
 
 .side-nav {
@@ -40,7 +46,28 @@ html {
   margin:auto;
 }
 
+.heading {
+  color:rgba(200,200,200,.8);
+  text-align:center;
+}
 
+.inputFields {
+  background-color:rgba(140,140,140,.5);
+  color:#fff;
+}
+
+/*.buttons{
+  display:flex;
+  margin:auto;
+}*/
+.good {
+  background-color:#37A160;
+  margin:auto;
+
+}
+.bad {
+  background-color:#BE2A28;
+}
 /*
 PHISH DONUT COLORS
 teal - 375160
