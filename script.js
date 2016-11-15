@@ -51,6 +51,7 @@ function displaySongAInfo(song){
   $('.song-a-details').append('<p>' + details.debut + '</p>');
   $('.song-a-details').append('<h5>Most Recently Played</h5>');
   $('.song-a-details').append('<p>' + details.mostRecent + '</p>');
+  $('.song-a-details').fadeIn(1600);
   document.forms['song_a'].reset();
 }
 };
@@ -75,6 +76,7 @@ function displaySongBInfo(song){
   $('.song-b-details').append('<p>' + details.debut + '</p>');
   $('.song-b-details').append('<h5>Most Recently Played</h5>');
   $('.song-b-details').append('<p>' + details.mostRecent + '</p>');
+  $('.song-b-details').fadeIn(1600);
   document.forms['song_b'].reset();
 }
 };
@@ -87,11 +89,14 @@ function displayVenueAInfo(venue){
   } else {
     var details = {};
     var showCount = venue.data.shows_count;
+    details.name = venue.data.name;
     details.showCount = venue.data.shows_count;
     details.cityState = venue.data.location;
     details.firstShow = venue.data.show_dates[0];
     details.lastShow = venue.data.show_dates[showCount-1];
     $('.venue-a-details').html('');
+    $('.venue-a-details').append('<h4>' + details.name + '</h4>');
+    $('.venue-a-details').append('<hr>');
     $('.venue-a-details').append('<h5>Location</h5>');
     $('.venue-a-details').append('<p>' + details.cityState + '</p>');
     $('.venue-a-details').append('<h5>Number of Shows</h5>');
@@ -100,6 +105,8 @@ function displayVenueAInfo(venue){
     $('.venue-a-details').append('<p>' + details.firstShow + '</p>');
     $('.venue-a-details').append('<h5>Most Recent Show</h5>');
     $('.venue-a-details').append('<p>' + details.lastShow + '</p>');
+    $('.venue-a-details').fadeIn(1600);
+    document.forms['venue_a'].reset();
   }
 };
 
@@ -111,11 +118,14 @@ function displayVenueBInfo(venue){
   } else {
     var details = {};
     var showCount = venue.data.shows_count;
+    details.name = venue.data.name;
     details.showCount = venue.data.shows_count;
     details.cityState = venue.data.location;
     details.firstShow = venue.data.show_dates[0];
     details.lastShow = venue.data.show_dates[showCount-1];
     $('.venue-b-details').html('');
+    $('.venue-b-details').append('<h4>' + details.name + '</h4>');
+    $('.venue-b-details').append('<hr>');
     $('.venue-b-details').append('<h5>Location</h5>');
     $('.venue-b-details').append('<p>' + details.cityState + '</p>');
     $('.venue-b-details').append('<h5>Number of Shows</h5>');
@@ -124,6 +134,8 @@ function displayVenueBInfo(venue){
     $('.venue-b-details').append('<p>' + details.firstShow + '</p>');
     $('.venue-b-details').append('<h5>Most Recent Show</h5>');
     $('.venue-b-details').append('<p>' + details.lastShow + '</p>');
+    $('.venue-b-details').fadeIn(1600);
+    document.forms['venue_b'].reset();
   }
 };
 

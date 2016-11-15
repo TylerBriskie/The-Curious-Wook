@@ -58,6 +58,7 @@ html {
 }
 .song-a-details, .song-b-details, .venue-a-details, .venue-b-details {
   text-align:center;
+  display:none;
 }
 
 .song-a-details h5, .song-b-details h5, .venue-a-details h5, .venue-b-details h5{
