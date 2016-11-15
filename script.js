@@ -72,28 +72,50 @@ function displaySongBInfo(song){
 
 function displayVenueAInfo(venue){
   if (venue.data === null) {
-    $('.song-b-details').html('');
-    $('.song-b-details').append('<h4>Song Not Found</h4>');
+    $('.venue-a-details').html('');
+    $('.venue-a-details').append('<h4>Venue Not Found</h4>');
+    $('.venue-a-details').append('<p>Check your spelling?</p>');
   } else {
-  var details = {};
-  var showCount = venue.data.shows_count;
-  details.showCount = venue.data.shows_count;
-  details.cityState = venue.data.location;
-  details.firstShow = venue.data.show_dates[0];
-  details.lastShow = venue.data.show_dates[showCount-1];
-  $('.venue-a-details').html('');
-  $('.venue-a-details').append('<h5>Number of Shows</h5>');
-  $('.venue-a-details').append('<p>' + details.showCount + '</p>');
-  $('.venue-a-details').append('<h5>Location</h5>');
-  $('.venue-a-details').append('<p>' + details.cityState + '</p>');
-  $('.venue-a-details').append('<h5>First Show</h5>');
-  $('.venue-a-details').append('<p>' + details.firstShow + '</p>');
-  $('.venue-a-details').append('<h5>Most Recent Show</h5>');
-  $('.venue-a-details').append('<p>' + details.lastShow + '</p>');
-}
-}
+    var details = {};
+    var showCount = venue.data.shows_count;
+    details.showCount = venue.data.shows_count;
+    details.cityState = venue.data.location;
+    details.firstShow = venue.data.show_dates[0];
+    details.lastShow = venue.data.show_dates[showCount-1];
+    $('.venue-a-details').html('');
+    $('.venue-a-details').append('<h5>Number of Shows</h5>');
+    $('.venue-a-details').append('<p>' + details.showCount + '</p>');
+    $('.venue-a-details').append('<h5>Location</h5>');
+    $('.venue-a-details').append('<p>' + details.cityState + '</p>');
+    $('.venue-a-details').append('<h5>First Show</h5>');
+    $('.venue-a-details').append('<p>' + details.firstShow + '</p>');
+    $('.venue-a-details').append('<h5>Most Recent Show</h5>');
+    $('.venue-a-details').append('<p>' + details.lastShow + '</p>');
+  }
+};
 
-function displayVenueBInfo(song){
+function displayVenueBInfo(venue){
+  if (venue.data === null) {
+    $('.venue-b-details').html('');
+    $('.venue-b-details').append('<h4>Venue Not Found</h4>');
+    $('.venue-b-details').append('<p>Check your spelling?</p>');
+  } else {
+    var details = {};
+    var showCount = venue.data.shows_count;
+    details.showCount = venue.data.shows_count;
+    details.cityState = venue.data.location;
+    details.firstShow = venue.data.show_dates[0];
+    details.lastShow = venue.data.show_dates[showCount-1];
+    $('.venue-b-details').html('');
+    $('.venue-b-details').append('<h5>Number of Shows</h5>');
+    $('.venue-b-details').append('<p>' + details.showCount + '</p>');
+    $('.venue-b-details').append('<h5>Location</h5>');
+    $('.venue-b-details').append('<p>' + details.cityState + '</p>');
+    $('.venue-b-details').append('<h5>First Show</h5>');
+    $('.venue-b-details').append('<p>' + details.firstShow + '</p>');
+    $('.venue-b-details').append('<h5>Most Recent Show</h5>');
+    $('.venue-b-details').append('<p>' + details.lastShow + '</p>');
+  }
 
 }
 
