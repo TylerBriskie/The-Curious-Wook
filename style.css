@@ -81,6 +81,10 @@ button {
   background-color:#BE2A28;
 }
 
+.help, .help a {
+  color: #CCC;
+}
+
 @media (max-width: 415px) {
   html {
     background-image: url("./assets/large_3_blur_mobile.jpg");

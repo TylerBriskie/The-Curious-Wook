@@ -51,6 +51,7 @@ function displaySongAInfo(song){
   $('.song-a-details').append('<p>' + details.debut + '</p>');
   $('.song-a-details').append('<h5>Most Recently Played</h5>');
   $('.song-a-details').append('<p>' + details.mostRecent + '</p>');
+  $('.song-a-details').append('<audio controls><source src="' + song.data.tracks[tracks.length-1].mp3 +'" type="audio/mpeg"></audio>');
   $('.song-a-details').fadeIn(1600);
   document.forms['song_a'].reset();
 }
@@ -76,6 +77,7 @@ function displaySongBInfo(song){
   $('.song-b-details').append('<p>' + details.debut + '</p>');
   $('.song-b-details').append('<h5>Most Recently Played</h5>');
   $('.song-b-details').append('<p>' + details.mostRecent + '</p>');
+  $('.song-b-details').append('<audio controls><source src="' + song.data.tracks[tracks.length-1].mp3 +'" type="audio/mpeg"></audio>');
   $('.song-b-details').fadeIn(1600);
   document.forms['song_b'].reset();
 }
