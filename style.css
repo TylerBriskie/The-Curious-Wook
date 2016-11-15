@@ -8,12 +8,6 @@ html {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-@media (max-width: 415px) {
-  html {
-    background-image: url("./assets/large_3_blur_mobile.jpg");
-  }
-}
-
 .side-nav {
   background-color:#375160;
 }
@@ -22,7 +16,9 @@ html {
   color:#BE2A28;
   text-shadow: .1em .1em #000;
 }
-
+.button-collapse i {
+  font-size:300%;
+}
 .side-nav .background img {
   height:100%;
   width:100%;
@@ -83,6 +79,12 @@ button {
 }
 .bad {
   background-color:#BE2A28;
+}
+
+@media (max-width: 415px) {
+  html {
+    background-image: url("./assets/large_3_blur_mobile.jpg");
+  }
 }
 /*
 PHISH DONUT COLORS
