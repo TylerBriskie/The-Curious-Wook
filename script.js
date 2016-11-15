@@ -12,8 +12,20 @@ $('#songSubmit').click(function(){
   $.get('http://phish.in/api/v1/songs/'+ $songB_regex, displaySongBInfo, "json");
 });
 
+$('#venueSubmit').click(function(){
+  var $venueA = $('input[name=venue_a]').val();
+  var $venueB = $('input[name=venue_b]').val();
+  var $venueA_regex = $venueA.replace(/\W+/g, '-').toLowerCase();
+  var $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
+  $.get('http://phish.in/api/v1/venues/'+ $venueA_regex, displayVenueAInfo, "json");
+  $.get('http://phish.in/api/v1/venues/'+ $venueB_regex, displayVenueBInfo, "json");
+});
 
 function displaySongAInfo(song){
+  if (song.data === null) {
+    $('.song-a-details').html('');
+    $('.song-a-details').append('<h4>Song Not Found</h4>');
+  } else {
   var details = {};
   var tracks = song.data.tracks
   details.timesPlayed = song.data.tracks_count;
@@ -35,11 +47,16 @@ function displaySongAInfo(song){
   $('.song-a-details').append('<p>' + details.debut + '</p>');
   $('.song-a-details').append('<h5>Most Recently Played</h5>');
   $('.song-a-details').append('<p>' + details.mostRecent + '</p>');
+}
 };
 
 function displaySongBInfo(song){
+  if (song.data === null) {
+    $('.song-b-details').html('');
+    $('.song-b-details').append('<h4>Song Not Found</h4>');
+  } else {
   var details = {};
-  var tracks = song.data.tracks
+  var tracks = song.data.tracks;
   details.timesPlayed = song.data.tracks_count;
   details.debut = song.data.tracks[0].show_date;
   details.mostRecent = song.data.tracks[tracks.length-1].show_date;
@@ -50,9 +67,35 @@ function displaySongBInfo(song){
   $('.song-b-details').append('<p>' + details.debut + '</p>');
   $('.song-b-details').append('<h5>Most Recently Played</h5>');
   $('.song-b-details').append('<p>' + details.mostRecent + '</p>');
+}
 };
 
+function displayVenueAInfo(venue){
+  if (venue.data === null) {
+    $('.song-b-details').html('');
+    $('.song-b-details').append('<h4>Song Not Found</h4>');
+  } else {
+  var details = {};
+  var showCount = venue.data.shows_count;
+  details.showCount = venue.data.shows_count;
+  details.cityState = venue.data.location;
+  details.firstShow = venue.data.show_dates[0];
+  details.lastShow = venue.data.show_dates[showCount-1];
+  $('.venue-a-details').html('');
+  $('.venue-a-details').append('<h5>Number of Shows</h5>');
+  $('.venue-a-details').append('<p>' + details.showCount + '</p>');
+  $('.venue-a-details').append('<h5>Location</h5>');
+  $('.venue-a-details').append('<p>' + details.cityState + '</p>');
+  $('.venue-a-details').append('<h5>First Show</h5>');
+  $('.venue-a-details').append('<p>' + details.firstShow + '</p>');
+  $('.venue-a-details').append('<h5>Most Recent Show</h5>');
+  $('.venue-a-details').append('<p>' + details.lastShow + '</p>');
+}
+}
 
+function displayVenueBInfo(song){
+
+}
 
 // function displayVenueInfo(venue){
 //
