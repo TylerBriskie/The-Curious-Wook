@@ -12,6 +12,7 @@ $('#songSubmit').click(function(){
   $.get('http://phish.in/api/v1/songs/'+ $songB_regex, displaySongBInfo, "json");
 });
 
+
 function displaySongAInfo(song){
   var details = {};
   var tracks = song.data.tracks
