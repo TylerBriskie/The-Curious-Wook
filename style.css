@@ -4,6 +4,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat:no-repeat;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -47,7 +48,7 @@ html {
 }
 
 .heading {
-  color:rgba(200,200,200,.8);
+  color:rgba(240,240,240,.8);
   text-align:center;
 }
 
@@ -55,15 +56,29 @@ html {
   background-color:rgba(140,140,140,.5);
   color:#fff;
 }
+.song-a-details, .song-b-details, .venue-a-details, .venue-b-details {
+  text-align:center;
+}
 
-/*.buttons{
+.song-a-details h5, .song-b-details h5, .venue-a-details h5, .venue-b-details h5{
+  color:#BE2A28;
+  text-shadow: .05em .05em #000;
+}
+
+.collection {
+  background-color:rgba(140,140,140,.5);
+  color:#FFF;
+}
+.button-row{
   display:flex;
-  margin:auto;
-}*/
+  justify-content:center;
+}
+button {
+  margin:0 2em;
+}
+
 .good {
   background-color:#37A160;
-  margin:auto;
-
 }
 .bad {
   background-color:#BE2A28;
