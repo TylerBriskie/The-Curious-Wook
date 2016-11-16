@@ -8,12 +8,23 @@ $(".card-action:a").click();
 
 //  ====submit API requests====
 $('#songSubmit').click(function(){
+  event.preventDefault();
   var $songA = $('input[name=song_a]').val();
   var $songB = $('input[name=song_b]').val();
   var $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
   var $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
-  $.get('http://phish.in/api/v1/songs/'+ $songA_regex, displaySongAInfo, "json");
-  $.get('http://phish.in/api/v1/songs/'+ $songB_regex, displaySongBInfo, "json");
+//   $.ajax({
+//
+//     url: 'http://phish.in/api/v1/songs/'+ $songA_regex,
+//     data: song,
+//     type: 'GET',
+//     crossDomain: true,
+//     dataType: 'jsonp',
+//     success: displaySongAInfo(),
+//     beforeSend: setHeader
+// });
+  $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/'+ $songA_regex, displaySongAInfo, "json");
+  $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/'+ $songB_regex, displaySongBInfo, "json");
 });
 
 $('#venueSubmit').click(function(){
@@ -93,7 +104,7 @@ function displayVenueAInfo(venue){
     $('.help').fadeIn(1600);
   } else {
     populateVenue(venue, 'a');
-    
+
   }
 };
 
