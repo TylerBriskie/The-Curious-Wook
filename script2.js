@@ -32,7 +32,7 @@ $('#venueSubmit').click(function(){
 
 
 function displaySongAInfo(song){
-  if (song.data === null) {
+  if (song.data == null) {
     $('.song-a-details').html('');
     $('.song-a-details').append('<h4>Song Not Found</h4>');
   } else {
@@ -59,7 +59,7 @@ function displaySongAInfo(song){
 };
 
 function displaySongBInfo(song){
-  if (song.data === null) {
+  if (song.data == null) {
     $('.song-b-details').html('');
     $('.song-b-details').append('<h4>Song Not Found</h4>');
   } else {

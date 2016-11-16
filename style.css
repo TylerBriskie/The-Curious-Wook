@@ -80,7 +80,9 @@ button {
 .bad {
   background-color:#BE2A28;
 }
-
+h6 {
+  text-align:center;
+}
 .help, .help a {
   color: #CCC;
 }
