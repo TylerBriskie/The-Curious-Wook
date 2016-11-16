@@ -39,6 +39,11 @@ html {
   display:flex;
   flex-direction:column;
 }
+.card-title {
+  display:flex;
+  justify-content:center;
+  text-decoration:underline;
+}
 .card-action {
   margin:auto;
 }
@@ -83,8 +88,13 @@ button {
 h6 {
   text-align:center;
 }
-.help, .help a {
+.help {
   color: #CCC;
+  display:none;
+}
+
+.help a {
+  color:#2288FF;
 }
 
 @media (max-width: 415px) {

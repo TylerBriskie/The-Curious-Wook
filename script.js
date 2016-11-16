@@ -90,9 +90,10 @@ function displayVenueAInfo(venue){
     $('.venue-a-details').append('<h5>Venue Not Found</h5>');
     $('.venue-a-details').append('<p>Check your spelling?</p>');
     $('.venue-a-details').fadeIn(1600);
+    $('.help').fadeIn(1600);
   } else {
     populateVenue(venue, 'a');
-
+    
   }
 };
 
@@ -102,6 +103,7 @@ function displayVenueBInfo(venue){
     $('.venue-b-details').append('<h5>Venue Not Found</h5>');
     $('.venue-b-details').append('<p>Check your spelling?</p>');
     $('.venue-b-details').fadeIn(1600);
+    $('.help').fadeIn(1600);
   } else {
     populateVenue(venue, 'b');
   }
