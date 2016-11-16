@@ -1,5 +1,5 @@
 html {
-  background: url("./assets/large_3_blur_mobile.jpg") no-repeat center center fixed;
+  background: url("./assets/large_3_blur.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,7 +17,7 @@ html {
   text-shadow: .1em .1em #000;
 }
 .button-collapse i {
-  font-size:500%;
+  font-size:300%;
 }
 .side-nav .background img {
   height:100%;
@@ -97,9 +97,9 @@ h6 {
   color:#2288FF;
 }
 
-@media (min-width: 415px) {
+@media only screen and (max-width: 450px) {
   html {
-    background-image: url("./assets/large_3_blur.jpg");
+    background-image: url("./assets/large_3_blur_mobile.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -108,7 +108,7 @@ h6 {
     font-family: 'Roboto Condensed', sans-serif;
   }
   .button-collapse i {
-    font-size:300%;
+    font-size:500%;
   }
 }
 /*
