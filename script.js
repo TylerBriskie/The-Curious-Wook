@@ -28,25 +28,9 @@ $('#venueSubmit').submit(function(event){
 });
 
 // autocomplete forms
-var listOfSongs = [];
-var listOfVenues = [];
-
-// $.ajax({
-//     async: false,
-//     url: 'http://phish.in/api/v1/songs.json?per_page=900',
-//     data: "",
-//     accepts:'application/json',
-//     dataType: 'json',
-//     success: function (songs) {
-//         for (var i = 0; i < songs.data.length; i++) {
-//             listOfSongs.push( songs.data[i].title );
-//         }
-//     }
-// })
-
 $.ajax({
     async: false,
-    url: 'http://phish.in/api/v1/songs.json?per_page=900',
+    url: 'https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs.json?per_page=900',
     data: "",
     accepts:'application/json',
     dataType: 'json',
@@ -59,7 +43,7 @@ $.ajax({
 
 $.ajax({
     async: false,
-    url: 'http://phish.in/api/v1/venues.json?per_page=900',
+    url: 'https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues.json?per_page=900',
     data: "",
     accepts:'application/json',
     dataType: 'json',
