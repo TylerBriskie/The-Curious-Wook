@@ -56,6 +56,7 @@ html {
 .inputFields {
   background-color:rgba(140,140,140,.5);
   color:#fff;
+  padding-bottom:3em;
 }
 .song-a-details, .song-b-details, .venue-a-details, .venue-b-details {
   text-align:center;
@@ -120,6 +121,9 @@ h6 {
   }
   .col {
     width:85%;
+  }
+  .inputFields {
+    padding-bottom:0;
   }
 }
 /*
