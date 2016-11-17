@@ -11,27 +11,27 @@ $(document).ready(function() {
         event.preventDefault();
         var $songA = $('input[name=song_a]').val();
         var $songB = $('input[name=song_b]').val();
-        if ($songA.length === 0 || $songB.length === 0){
-          alert("please enter two venues");
+        if ($songA.length === 0 || $songB.length === 0) {
+            alert("please enter two venues");
         } else {
-        var $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
-        var $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
-        $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songA_regex, displaySongAInfo, "json");
-        $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songB_regex, displaySongBInfo, "json");
-      }
+            var $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
+            var $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
+            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songA_regex, displaySongAInfo, "json");
+            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songB_regex, displaySongBInfo, "json");
+        }
     });
 
     $('#venueSubmit').submit(function(event) {
         event.preventDefault();
         var $venueA = $('input[name=venue_a]').val();
         var $venueB = $('input[name=venue_b]').val();
-        if ($venueA.length === 0 || $venueB.length === 0){
-          alert("please enter two venues");
+        if ($venueA.length === 0 || $venueB.length === 0) {
+            alert("please enter two venues");
         } else {
-        var $venueA_regex = $venueA.replace(/\W+/g, '-').toLowerCase();
-        var $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
-        $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueA_regex, displayVenueAInfo, "json");
-        $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueB_regex, displayVenueBInfo, "json");
+            var $venueA_regex = $venueA.replace(/\W+/g, '-').toLowerCase();
+            var $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
+            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueA_regex, displayVenueAInfo, "json");
+            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueB_regex, displayVenueBInfo, "json");
         }
     });
 
@@ -115,7 +115,7 @@ $(document).ready(function() {
         $('.song-' + column + '-details').append('<p>' + details.mostRecent + '</p>');
         $('.song-' + column + '-details').append('<audio controls><source src="' + song.data.tracks[tracks.length - 1].mp3 + '" type="audio/mpeg"></audio>');
         $('.song-' + column + '-details').fadeIn(1600);
-        $('input[name=song_'+column).val('');
+        $('input[name=song_' + column).val('');
     };
 
 
@@ -167,6 +167,6 @@ $(document).ready(function() {
         $('.venue-' + column + '-details').append('<h5>Most Recent Show</h5>');
         $('.venue-' + column + '-details').append('<p>' + details.lastShow + '</p>');
         $('.venue-' + column + '-details').fadeIn(1600);
-        $('input[name=venue_'+column).val('');
+        $('input[name=venue_' + column).val('');
     };
 });
