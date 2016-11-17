@@ -102,7 +102,7 @@ h6 {
 
 @media only screen and (max-width: 414px) {
   html {
-    background-image: url("./assets/large_3_blur_mobile.jpg");
+    background-image: url("./assets/mobile_bg_2.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
