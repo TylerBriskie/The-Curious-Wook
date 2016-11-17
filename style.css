@@ -67,7 +67,9 @@ html {
   color:#BE2A28;
   text-shadow: .05em .05em #000;
 }
-
+form p {
+  text-align:center;
+}
 .collection {
   background-color:rgba(140,140,140,.5);
   color:#FFF;

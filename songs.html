@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -9,58 +10,66 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <script type="text/javascript" src ="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <title>The Curious Wook</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
         <ul id="slide-out" class="side-nav">
-          <li><div class="userView">
-            <div class="background">
-              <img src="assets/large_2.jpg">
-            </div>
+            <li>
+                <div class="userView">
+                    <div class="background">
+                        <img src="assets/large_2.jpg">
+                    </div>
 
-          </div></li>
-          <li><div class="divider"></div></li>
-          <li class="subheader">The Curious Wook</li>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./songs.html">Compare Songs</a></li>
-          <li><a href="./venues.html">Compare Venues</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-          <li><div class="divider"></div></li>
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li class="subheader">The Curious Wook</li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./songs.html">Compare Songs</a></li>
+            <li><a href="./venues.html">Compare Venues</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </header>
 
     <div class="container">
-      <div class="row">
-        <h3 class="heading">Enter Two Songs To Compare Stats</h3>
-      </div>
-      <div class="row inputFields">
-        <div class="col m6 s12">
-          <form class="song_a" name="song_a" action="songs.html" method="post">
-            <input type="text" name="song_a" value="">
-          </form>
-          <section class="song-a-details">
-
-          </section>
+        <div class="row">
+            <h3 class="heading">Enter Two Songs To Compare Stats</h3>
         </div>
-        <div class="col m6 s12">
-          <form class="song_b" name="song_b" action="songs.html" method="post">
-            <input type="text" name="song_b" value="">
-          </form>
+        <div class="row inputFields">
+            <form id="songSubmit">
+                <div class="col m6 s12">
+                    <div class="song_a songInputs" name="song_a">
+                        <input type="text" name="song_a" value="">
+                    </div>
+                    <section class="song-a-details">
 
-        <section class = "song-b-details">
+                    </section>
+                </div>
+                <div class="col m6 s12">
+                    <div class="song_b songInputs" name="song_b">
+                        <input type="text" name="song_b" value="">
+                    </div>
+                    <section class="song-b-details">
 
-        </section>
+                    </section>
+                </div>
         </div>
-
-      </div>
-      <div class="row button-row">
-        <!-- <input type="submit" id="songSubmit" class="waves-effect waves-light btn green" value="submit"> -->
-        <button id="songSubmit" class="waves-effect waves-light btn green">submit</button>
-        <button id="formCancel" class="waves-effect waves-light btn red">clear</button>
-      </div>
+        <div class="row button-row">
+            <!-- <input type="submit" id="songSubmit" class="waves-effect waves-light btn green" value="submit"> -->
+            <button type="submit" id="songSubmit" class="waves-effect waves-light btn green">submit</button>
+            <button id="formCancel" class="waves-effect waves-light btn red">clear</button>
+        </div>
+        </form>
     </div>
-  </body>
+</body>
+
 </html>
