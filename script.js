@@ -32,8 +32,8 @@ $('#venueSubmit').click(function(){
   var $venueB = $('input[name=venue_b]').val();
   var $venueA_regex = $venueA.replace(/\W+/g, '-').toLowerCase();
   var $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
-  $.get('http://phish.in/api/v1/venues/'+ $venueA_regex, displayVenueAInfo, "json");
-  $.get('http://phish.in/api/v1/venues/'+ $venueB_regex, displayVenueBInfo, "json");
+  $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/'+ $venueA_regex, displayVenueAInfo, "json");
+  $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/'+ $venueB_regex, displayVenueBInfo, "json");
 });
 
 
