@@ -53,7 +53,8 @@ function displaySongAInfo(song){
   if (!song.data) {
     console.log('here');
     $('.song-a-details').html('');
-    $('.song-a-details').append('<h4>Song Not Found</h4>');
+    $('.song-a-details').append('<h5>Song Not Found</h5>');
+    $('.song-a-details').append('<p>Check your spelling?</p>');
     $('.song-a-details').fadeIn(1600);
   } else {
     populateSong(song, 'a');
@@ -63,7 +64,8 @@ function displaySongAInfo(song){
 function displaySongBInfo(song){
   if (!song.data) {
     $('.song-b-details').html('');
-    $('.song-b-details').append('<h4>Song Not Found</h4>');
+    $('.song-b-details').append('<h5>Song Not Found</h5>');
+    $('.song-a-details').append('<p>Check your spelling?</p>');
     $('.song-b-details').fadeIn(1600);
   } else {
     populateSong(song, 'b');
