@@ -39,34 +39,36 @@
         <h3 class="heading">Enter Two Venues To Compare Stats</h3>
       </div>
       <div class="row inputFields">
-        <div class="col m6 s12">
-          <form class="venue_a" name="venue_a" action="venues.html" method="post">
-            <input type="text" name="venue_a" value="">
-          </form>
-          <section class="venue-a-details">
+        <form id="venueSubmit">
+          <div class="col m6 s12">
+            <div class="venue_a" name="venue_a">
+              <input type="text" name="venue_a">
+            </div>
+            <section class="venue-a-details">
+
+            </section>
+          </div>
+          <div class="col m6 s12">
+            <div class="venue_b" name="venue_b">
+              <input type="text" name="venue_b">
+            </div>
+
+          <section class = "venue-b-details">
 
           </section>
-        </div>
-        <div class="col m6 s12">
-          <form class="venue_b" name="venue_b" action="venues.html" method="post">
-            <input type="text" name="venue_b" value="">
-          </form>
-
-        <section class = "venue-b-details">
-
-        </section>
-        </div>
-        <aside class="help">
-          <h6>Trouble finding the Venue you're looking for? Check the master list over at
-            <a href="https://phish.net/venues/">phish.net</a>
-          </h6>
-        </aside>
+          </div>
+          <aside class="help">
+            <h6>Trouble finding the Venue you're looking for? Check the master list over at
+              <a href="https://phish.net/venues/">phish.net</a>
+            </h6>
+          </aside>
 
       </div>
       <div class="row button-row">
-        <button id="venueSubmit" class="waves-effect waves-light btn green">submit</button>
+        <button type="submit" id="venueSubmit" class="waves-effect waves-light btn green">submit</button>
         <button id="formCancel" class="waves-effect waves-light btn red">clear</button>
       </div>
+    </form>
     </div>
   </body>
 </html>
