@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./assets/jquery.autocomplete.js"></script>
     <script type="text/javascript" src ="script.js"></script>
     <title>The Curious Wook</title>
   </head>
@@ -39,10 +40,13 @@
         <h3 class="heading">Enter Two Venues To Compare Stats</h3>
       </div>
       <div class="row inputFields">
+        <datalist id="venues">
+
+        </datalist>
         <form id="venueSubmit">
           <div class="col m6 s12">
             <div class="venue_a" name="venue_a">
-              <input type="text" name="venue_a">
+              <input type="text" list="venues" name="venue_a">
             </div>
             <section class="venue-a-details">
 
@@ -50,7 +54,7 @@
           </div>
           <div class="col m6 s12">
             <div class="venue_b" name="venue_b">
-              <input type="text" name="venue_b">
+              <input type="text" list="venues" name="venue_b">
             </div>
 
           <section class = "venue-b-details">

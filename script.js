@@ -27,7 +27,55 @@ $('#venueSubmit').submit(function(event){
   $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/'+ $venueB_regex, displayVenueBInfo, "json");
 });
 
+// autocomplete forms
+var listOfSongs = [];
+var listOfVenues = [];
 
+// $.ajax({
+//     async: false,
+//     url: 'http://phish.in/api/v1/songs.json?per_page=900',
+//     data: "",
+//     accepts:'application/json',
+//     dataType: 'json',
+//     success: function (songs) {
+//         for (var i = 0; i < songs.data.length; i++) {
+//             listOfSongs.push( songs.data[i].title );
+//         }
+//     }
+// })
+
+$.ajax({
+    async: false,
+    url: 'http://phish.in/api/v1/songs.json?per_page=900',
+    data: "",
+    accepts:'application/json',
+    dataType: 'json',
+    success: function (songs) {
+        for (var i = 0; i < songs.data.length; i++) {
+            $('#songs').append('<option value="' +songs.data[i].title +'">');
+        }
+    }
+})
+
+$.ajax({
+    async: false,
+    url: 'http://phish.in/api/v1/venues.json?per_page=900',
+    data: "",
+    accepts:'application/json',
+    dataType: 'json',
+    success: function (venues) {
+        for (var i = 0; i < venues.data.length; i++) {
+            $('#venues').append('<option value="' +venues.data[i].name +'">');
+        }
+    }
+});
+
+$('#song_a').autocomplete({
+    source: listOfSongs
+});
+$('#song_b').autocomplete({
+    source: listOfSongs
+});
 //clear forms
 $('#formCancel').click(function(){
   $('.song-a-details').slideUp(600);
