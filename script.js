@@ -54,12 +54,6 @@ $.ajax({
     }
 });
 
-$('#song_a').autocomplete({
-    source: listOfSongs
-});
-$('#song_b').autocomplete({
-    source: listOfSongs
-});
 //clear forms
 $('#formCancel').click(function(){
   $('.song-a-details').slideUp(600);
