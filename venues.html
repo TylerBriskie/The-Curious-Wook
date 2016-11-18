@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -10,69 +11,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script type="text/javascript" src="./assets/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src ="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <title>The Curious Wook</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <header>
         <ul id="slide-out" class="side-nav">
-          <li>
-            <div class="userView">
-            <div class="background">
-              <img src="assets/large_2.jpg">
-            </div>
+            <li>
+                <div class="userView">
+                    <div class="background">
+                        <img src="assets/large_2.jpg">
+                    </div>
 
-          </div></li>
-          <li><div class="divider"></div></li>
-          <li class="subheader">The Curious Wook</li>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./songs.html">Compare Songs</a></li>
-          <li><a href="./venues.html">Compare Venues</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-          <li><div class="divider"></div></li>
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li class="subheader">The Curious Wook</li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./songs.html">Compare Songs</a></li>
+            <li><a href="./venues.html">Compare Venues</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </header>
 
     <div class="container">
-      <div class="row">
-        <h3 class="heading">Enter Two Venues To Compare Stats</h3>
-      </div>
-      <div class="row inputFields">
-        <datalist id="venues">
+        <div class="row">
+            <h3 class="heading">Enter Two Venues To Compare Stats</h3>
+        </div>
+        <div class="row inputFields">
+            <datalist id="venues">
 
         </datalist>
-        <form id="venueSubmit">
-          <div class="col m6 s12">
-            <div class="venue_a" name="venue_a">
-              <input type="text" list="venues" name="venue_a">
-            </div>
-            <section class="venue-a-details">
+            <form id="venueSubmit">
+                <div class="col m6 s12">
+                    <div class="venue_a" name="venue_a">
+                        <input type="text" list="venues" name="venue_a">
+                    </div>
+                    <section class="venue-a-details">
 
-            </section>
-          </div>
-          <div class="col m6 s12">
-            <div class="venue_b" name="venue_b">
-              <input type="text" list="venues" name="venue_b">
-            </div>
+                    </section>
+                </div>
+                <div class="col m6 s12">
+                    <div class="venue_b" name="venue_b">
+                        <input type="text" list="venues" name="venue_b">
+                    </div>
 
-          <section class = "venue-b-details">
+                    <section class="venue-b-details">
 
-          </section>
-          </div>
-          <aside class="help">
-            <h6>Trouble finding the Venue you're looking for? Check the master list over at
-              <a href="https://phish.net/venues/">phish.net</a>
-            </h6>
-          </aside>
-
-      </div>
-      <div class="row button-row">
-        <button type="submit" id="venueSubmit" class="waves-effect waves-light btn green">submit</button>
-        <button id="formCancel" class="waves-effect waves-light btn red">clear</button>
-      </div>
-    </form>
+                    </section>
+                </div>
+        </div>
+        <div class="row button-row">
+            <button type="submit" id="venueSubmit" class="waves-effect waves-light btn green">submit</button>
+            <button id="formCancel" class="waves-effect waves-light btn red">clear</button>
+        </div>
+        </form>
     </div>
-  </body>
+</body>
+
 </html>

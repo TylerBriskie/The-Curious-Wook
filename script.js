@@ -11,14 +11,10 @@ $(document).ready(function() {
         event.preventDefault();
         var $songA = $('input[name=song_a]').val();
         var $songB = $('input[name=song_b]').val();
-        if ($songA.length === 0 && $songB.length === 0) {
-            alert("please enter two songs");
-        } else {
             var $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
             var $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
             $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songA_regex, displaySongAInfo, "json");
             $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songB_regex, displaySongBInfo, "json");
-        }
     });
 
     $('#venueSubmit').submit(function(event) {
@@ -29,7 +25,7 @@ $(document).ready(function() {
             var $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
             $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueA_regex, displayVenueAInfo, "json");
             $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueB_regex, displayVenueBInfo, "json");
-        
+
     });
 
     // autocomplete forms
@@ -44,7 +40,7 @@ $(document).ready(function() {
                 $('#songs_support').append('<option value="' + songs.data[i].title + '">');
             }
         }
-    })
+    });
 
     $.ajax({
         async: false,
@@ -86,7 +82,7 @@ $(document).ready(function() {
         if (!song.data) {
             $('.song-b-details').html('');
             $('.song-b-details').append('<h5>Song Not Found</h5>');
-            $('.song-a-details').append('<p>Check your spelling?</p>');
+            $('.song-b-details').append('<p>Check your spelling?</p>');
             $('.song-b-details').fadeIn(1600);
         } else {
             populateSong(song, 'b');
@@ -125,7 +121,6 @@ $(document).ready(function() {
             $('.venue-a-details').append('<h5>Venue Not Found</h5>');
             $('.venue-a-details').append('<p>Check your spelling?</p>');
             $('.venue-a-details').fadeIn(1600);
-            $('.help').fadeIn(1600);
         } else {
             populateVenue(venue, 'a');
 
@@ -138,7 +133,6 @@ $(document).ready(function() {
             $('.venue-b-details').append('<h5>Venue Not Found</h5>');
             $('.venue-b-details').append('<p>Check your spelling?</p>');
             $('.venue-b-details').fadeIn(1600);
-            $('.help').fadeIn(1600);
         } else {
             populateVenue(venue, 'b');
         }
