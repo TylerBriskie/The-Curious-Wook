@@ -11,8 +11,8 @@ $(document).ready(function() {
         event.preventDefault();
         var $songA = $('input[name=song_a]').val();
         var $songB = $('input[name=song_b]').val();
-        if ($songA.length === 0 || $songB.length === 0) {
-            alert("please enter two venues");
+        if ($songA.length === 0 && $songB.length === 0) {
+            alert("please enter two songs");
         } else {
             var $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
             var $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
@@ -25,14 +25,11 @@ $(document).ready(function() {
         event.preventDefault();
         var $venueA = $('input[name=venue_a]').val();
         var $venueB = $('input[name=venue_b]').val();
-        if ($venueA.length === 0 || $venueB.length === 0) {
-            alert("please enter two venues");
-        } else {
             var $venueA_regex = $venueA.replace(/\W+/g, '-').toLowerCase();
             var $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
             $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueA_regex, displayVenueAInfo, "json");
             $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueB_regex, displayVenueBInfo, "json");
-        }
+        
     });
 
     // autocomplete forms
@@ -44,7 +41,7 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(songs) {
             for (var i = 0; i < songs.data.length; i++) {
-                $('#songs').append('<option value="' + songs.data[i].title + '">');
+                $('#songs_support').append('<option value="' + songs.data[i].title + '">');
             }
         }
     })
@@ -113,6 +110,7 @@ $(document).ready(function() {
         $('.song-' + column + '-details').append('<p>' + details.debut + '</p>');
         $('.song-' + column + '-details').append('<h5>Most Recently Played</h5>');
         $('.song-' + column + '-details').append('<p>' + details.mostRecent + '</p>');
+        $('.song-' + column + '-details').append('<h5>Listen</h5>')
         $('.song-' + column + '-details').append('<audio controls><source src="' + song.data.tracks[tracks.length - 1].mp3 + '" type="audio/mpeg"></audio>');
         $('.song-' + column + '-details').fadeIn(1600);
         $('input[name=song_' + column).val('');
