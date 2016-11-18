@@ -63,7 +63,12 @@ html {
   display:none;
 }
 
-.song-a-details h5, .song-b-details h5, .venue-a-details h5, .venue-b-details h5{
+h3 {
+  color:#DDD;
+  text-shadow: .05em .05em #000;
+  text-align:right;
+}
+.song-a-details h5, .song-b-details h5, .venue-a-details h5, .venue-b-details h5, h1{
   color:#BE2A28;
   text-shadow: .05em .05em #000;
 }
