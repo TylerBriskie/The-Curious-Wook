@@ -74,7 +74,6 @@ $(document).ready(function() {
 
     //    ====Song Info====
     function displaySongAInfo(song) {
-        console.log(song);
         if (!song.data) {
             $('.song-a-details').html('');
             $('.song-a-details').append('<h5>Song Not Found</h5>');
