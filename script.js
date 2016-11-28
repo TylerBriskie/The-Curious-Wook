@@ -1,9 +1,16 @@
 $(document).ready(function() {
 
     //   ====Refactoring w/ constructor function =======
-    // function new_api_request(){
-    //
-    // }
+    function api_request(url){
+      this.newSearch = function(search, callback){
+        $.get(url + search, (result) => {
+          callback(result);
+        }, 'json');
+      };
+    };
+
+    let chooseSong = new api_request('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/');
+    let chooseVenue = new api_request('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/');
 
     //   ====Slide Out Navbar===
     $(".button-collapse").sideNav();
@@ -13,57 +20,57 @@ $(document).ready(function() {
     //  ====submit API requests====
     $('#songSubmit').submit(function(event) {
         event.preventDefault();
-        var $songA = $('input[name=song_a]').val();
-        var $songB = $('input[name=song_b]').val();
+        let $songA = $('input[name=song_a]').val();
+        let $songB = $('input[name=song_b]').val();
         if ($songA.length === 0 || $songB.length === 0) {
             alert("please enter two songs");
         } else {
-            var $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
-            var $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
-            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songA_regex, displaySongAInfo, "json");
-            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs/' + $songB_regex, displaySongBInfo, "json");
+            let $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
+            let $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
+            chooseSong.newSearch($songA_regex, displaySongAInfo)
+            chooseSong.newSearch($songB_regex, displaySongBInfo)
         }
     });
 
     $('#venueSubmit').submit(function(event) {
         event.preventDefault();
-        var $venueA = $('input[name=venue_a]').val();
-        var $venueB = $('input[name=venue_b]').val();
+        let $venueA = $('input[name=venue_a]').val();
+        let $venueB = $('input[name=venue_b]').val();
         if ($venueA.length === 0 || $venueB.length === 0) {
             alert("please enter two venues");
         } else {
-            var $venueA_regex = $venueA.replace(/\W+/g, '-').toLowerCase();
-            var $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
-            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueA_regex, displayVenueAInfo, "json");
-            $.get('https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues/' + $venueB_regex, displayVenueBInfo, "json");
+          let $venueA_regex = $venueA.replace(/\W+/g, '-').toLowerCase();
+          let $venueB_regex = $venueB.replace(/\W+/g, '-').toLowerCase();
+          chooseVenue.newSearch($venueA_regex, displayVenueAInfo);
+          chooseVenue.newSearch($venueB_regex, displayVenueBInfo);
         }
     });
 
     // autocomplete forms
     $.ajax({
-        async: false,
-        url: 'https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs.json?per_page=900',
-        data: "",
-        accepts: 'application/json',
-        dataType: 'json',
-        success: function(songs) {
-            for (var i = 0; i < songs.data.length; i++) {
-                $('#songs').append('<option value="' + songs.data[i].title + '">');
-            }
-        }
+      async: false,
+      url: 'https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/songs.json?per_page=900',
+      data: "",
+      accepts: 'application/json',
+      dataType: 'json',
+      success: function(songs) {
+          for (let i = 0; i < songs.data.length; i++) {
+              $('#songs').append('<option value="' + songs.data[i].title + '">');
+          }
+      }
     })
 
     $.ajax({
-        async: false,
-        url: 'https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues.json?per_page=900',
-        data: "",
-        accepts: 'application/json',
-        dataType: 'json',
-        success: function(venues) {
-            for (var i = 0; i < venues.data.length; i++) {
-                $('#venues').append('<option value="' + venues.data[i].name + '">');
-            }
+      async: false,
+      url: 'https://galvanize-cors-proxy.herokuapp.com/http://phish.in/api/v1/venues.json?per_page=900',
+      data: "",
+      accepts: 'application/json',
+      dataType: 'json',
+      success: function(venues) {
+        for (let i = 0; i < venues.data.length; i++) {
+          $('#venues').append('<option value="' + venues.data[i].name + '">');
         }
+      }
     });
 
     //clear forms
@@ -100,8 +107,8 @@ $(document).ready(function() {
     };
 
     function populateSong(song, column) {
-        var details = {};
-        var tracks = 0;
+        let details = {};
+        let tracks = 0;
         tracks = song.data.tracks
         details.title = song.data.title;
         details.timesPlayed = song.data.tracks_count;
@@ -151,8 +158,8 @@ $(document).ready(function() {
 
 
     function populateVenue(venue, column) {
-        var details = {};
-        var showCount = venue.data.shows_count;
+        let details = {};
+        let showCount = venue.data.shows_count;
         details.name = venue.data.name;
         details.showCount = venue.data.shows_count;
         details.cityState = venue.data.location;
