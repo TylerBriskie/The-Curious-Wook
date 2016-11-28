@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    //   ====Refactoring w/ constructor function =======
+    // function new_api_request(){
+    //
+    // }
 
     //   ====Slide Out Navbar===
     $(".button-collapse").sideNav();
@@ -12,7 +16,7 @@ $(document).ready(function() {
         var $songA = $('input[name=song_a]').val();
         var $songB = $('input[name=song_b]').val();
         if ($songA.length === 0 || $songB.length === 0) {
-            alert("please enter two venues");
+            alert("please enter two songs");
         } else {
             var $songA_regex = $songA.replace(/\W+/g, '-').toLowerCase();
             var $songB_regex = $songB.replace(/\W+/g, '-').toLowerCase();
